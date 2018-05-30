@@ -12,15 +12,18 @@ public class Main {
          *  create a Song class having Title and Duration
          *  the program will have an Album class containing a list of songs
          *  albums will be stored in an ArrayList
-         *  Songs from different albums can be added to a playlsit and will appear in
+         *  Songs from different albums can be added to a playlist and will appear in
          *  the list in order they are added
-         *  once the songs have been added to the playlsit, create a menu of options to:
+         *  once the songs have been added to the playlist, create a menu of options to:
          *      Quit, Skip Forward to next song,
          *      Skip backwards to previous song,
          *      Replay the current song
          *  A song must exist in an album before it can be added to the playlist
          *  Hint: to replay a song, consider what was done in the linkedList class example
          *  an optional extra: Remove the current song from the list.
+         *
+         *  InnerClass Challenge:
+         *  refactor the Album class to use an inner class instead of an ArrayList
          */
         Playlist playlist = new Playlist();
        operatePlaylist(playlist);
@@ -51,7 +54,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         boolean goingForward = true;
-        String currentSong;
+       // String currentSong;
 
         Album beetles = new Album();
         beetles.addSongToAlbum("Hey Jude", 2);
@@ -70,12 +73,12 @@ public class Main {
         eagles.addSongToAlbum("Peaceful Easy Feeling", 2);
 
         addSongToPlaylist(playlist, beetles, "Hey Jude");
-       // addSongToPlaylist(playlist, beetles, "Hey Jude");
+        addSongToPlaylist(playlist, beetles, "Hey Jude");
         addSongToPlaylist(playlist, beetles, "Yesterday");
         addSongToPlaylist(playlist, styx, "Renegade");
         addSongToPlaylist(playlist, styx, "The Best Of Times");
         addSongToPlaylist(playlist, eagles, "Desperado");
-       // addSongToPlaylist(playlist, eagles, "noName");
+        addSongToPlaylist(playlist, eagles, "noName");
         addSongToPlaylist(playlist, eagles, "Peaceful Easy Feeling");
          playlist.printList();
 
